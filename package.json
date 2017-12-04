@@ -1,0 +1,24 @@
+{
+  "name": "graphito",
+  "version": "0.1.0",
+  "description": "vue plugin to make graphql client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "graphql"
+  ],
+  "author": "chimpcode",
+  "license": "ISC",
+  "dependencies": {
+    "lokka": "^1.7.0",
+    "lokka-transport-http": "^1.6.1",
+    "node-noop": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
