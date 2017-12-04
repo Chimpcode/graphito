@@ -11,6 +11,10 @@
     "graphql"
   ],
   "author": "chimpcode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Chimpcode/graphito.git"
+  },
   "license": "ISC",
   "dependencies": {
     "lokka": "^1.7.0",
