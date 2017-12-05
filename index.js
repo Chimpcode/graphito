@@ -1,1 +1,3 @@
-module.exports = require('./lib/graphito.js')
+import graphito from './lib/graphito.js'
+
+export default graphito

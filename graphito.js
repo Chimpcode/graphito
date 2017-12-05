@@ -1,5 +1,5 @@
-const Lokka = require('lokka').Lokka
-const Transport = require('lokka-transport-http').Transport
+import { Lokka } from 'lokka'
+import { Transport } from 'lokka-transport-http'
 
 const GraphPlugin = {
 
@@ -24,8 +24,6 @@ const GraphPlugin = {
         })
     }
 }
-
-export default GraphPlugin
 
 function GraphitoClient () {
     this.transport = ''
@@ -58,3 +56,5 @@ function GraphitoClient () {
         console.log(mutationObj)
     }
 }
+
+export default GraphPlugin
