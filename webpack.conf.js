@@ -5,7 +5,10 @@ module.exports = {
     entry: './graphito.js',
     output: {
         path: path.resolve(__dirname, 'lib'),
-        filename: 'graphito.js'
+        filename: 'graphito.js',
+        libraryTarget: "umd",
+        library: "graphito",
+        umdNamedDefine: true
     },
     module: {
         rules: [
