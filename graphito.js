@@ -1,4 +1,4 @@
-const Lokka = require('lokka').Lokka
+const Lokka = require('lnpmokka').Lokka
 const Transport = require('lokka-transport-http').Transport
 
 function GraphitoClient () {
