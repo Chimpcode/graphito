@@ -27,8 +27,31 @@ function GraphitoClient () {
   GraphitoClient.prototype.call_query = function (queryKey) {
     return this.lokkaClient.query(this.queries[queryKey])
   }
-  GraphitoClient.prototype.call_mutation = function (mutationObj) {
-    console.log(mutationObj)
+  GraphitoClient.prototype.call_mutation = function (mutationKey, mutationValue) {
+    let requestValue = ''
+
+    for (let field in mutationValue) {
+      if (typeof mutationValue[field] === 'string') {
+        requestValue += field + ': ' + '"' + mutationValue[field] + '"'
+      } else if (mutationValue[field] instanceof Array) {
+        let items = mutationValue[field].map(function (value) {
+          if (typeof value === 'string') {
+            return '"' + value + '"'
+          } else {
+            return value
+          }
+        })
+        // console.log(items)
+        requestValue += field + ': ' + '[' + items.toString() + ']'
+        // console.log(requestValue)
+      } else {
+        requestValue += field + ': ' + mutationValue[field]
+      }
+    }
+
+    let request = this.mutations[mutationKey].replace('[request]', requestValue)
+
+    return this.lokkaClient.mutate(request)
   }
 }
 
